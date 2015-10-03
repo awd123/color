@@ -1,31 +1,44 @@
 #include <stdio.h>
 #include <string.h>
 
-int main(int argc, char *argv[]) {
+void colorize(char string[]) {
   int i, n;
 
-  if (sizeof(argv[1]) == 0) {
-    printf("Whoops! Wrong number of arguments! :( Exiting...\n");
-
-    return 1;
-  }
-
-  for (i = 0, n = 0; i < strlen(argv[1]); i++, n++) {
-    if (i == (strlen(argv[1]) - 1)) {
+  for (i = 0, n = 0; i < strlen(string); i++, n++) {
+    if (i == (strlen(string) - 1)) {
       printf("\e[%d;3%dm%c\e[0m\n",
 	     ((n < 8) ? 0 : 1),
 	     ((n < 8) ? n : (n - 7)),
-	     argv[1][i]);
+	     string[i]);
     } else {
       printf("\e[%d;3%dm%c",
 	     ((n < 8) ? 0 : 1),
 	     ((n < 8) ? n : (n - 7)),
-	     argv[1][i]);
+	     string[i]);
     }
 
     if (n == 14) {
       n -= 14;
     }
+  }
+}
+
+int main(int argc, char *argv[]) {
+  char str[1000];
+
+  if (argc == 0) {
+    printf("Entering interactive mode... (type exit to exit)\n");
+    while (1) {
+      printf("color>");
+      fgets(str, sizeof(str), stdin);
+      if (str == "exit") {
+        break;
+      } else {
+        colorize(str);
+      }
+    }
+  } else {
+    colorize(argv[1]);
   }
 
   return 0;
