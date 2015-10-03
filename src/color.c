@@ -5,6 +5,7 @@ int main(int argc, char *argv[]) {
   int i;
 
   if (sizeof(argv[1]) == 0) {
+    printf("Whoops! Wrong number of arguments! :( Exiting...\n");
     return 1;
   }
   
