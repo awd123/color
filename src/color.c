@@ -1,45 +1,52 @@
 #include <stdio.h>
 #include <string.h>
 
-void colorize(char string[]) {
+void
+colorize (char string[])
+{
   int i, n;
 
-  for (i = 0, n = 0; i < strlen(string); i++, n++) {
-    if (i == (strlen(string) - 1)) {
-      printf("\e[%d;3%dm%c\e[0m\n",
-	     ((n < 8) ? 0 : 1),
-	     ((n < 8) ? n : (n - 7)),
-	     string[i]);
-    } else {
-      printf("\e[%d;3%dm%c",
-	     ((n < 8) ? 0 : 1),
-	     ((n < 8) ? n : (n - 7)),
-	     string[i]);
-    }
+  for (i = 0, n = 0; i < strlen(string); i++, n++)
+    {
+      if (i == (strlen(string) - 1))
+        printf("\e[%d;3%dm%c\e[0m\n",
+	       ((n < 8) ? 0 : 1),
+	       ((n < 8) ? n : (n - 7)),
+	       string[i]);
+      else
+        printf("\e[%d;3%dm%c",
+	       ((n < 8) ? 0 : 1),
+	       ((n < 8) ? n : (n - 7)),
+	       string[i]);
 
-    if (n == 14) {
-      n -= 14;
+      if (n == 14)
+	n -= 14;
     }
-  }
 }
 
-int main(int argc, char *argv[]) {
-  char str[1000];
+int
+main(int argc, char *argv[])
+{
+  // char str[1000];
+  // str[1000] = '\0'
 
-  if (argc == 0) {
-    printf("Entering interactive mode... (type exit to exit)\n");
-    while (1) {
-      printf("color>");
-      fgets(str, sizeof(str), stdin);
-      if (str == "exit") {
-        break;
-      } else {
-        colorize(str);
-      }
+  /*
+  if (argc == 0)
+    {
+      printf("Entering interactive mode... (type exit to exit)\n");
+      while (1)
+	{
+          printf("color>");
+          fgets(str, sizeof(str), stdin);
+            if (str == "exit")
+	      break;
+	    else
+	      colorize(str);
+	}
     }
-  } else {
+  else
+  */
     colorize(argv[1]);
-  }
 
   return 0;
 }
