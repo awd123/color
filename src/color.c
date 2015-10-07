@@ -1,4 +1,4 @@
-#include <Python.h>
+#include <python2.7/Python.h>
 #include "color.h"
 
 int
