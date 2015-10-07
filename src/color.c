@@ -27,10 +27,9 @@ colorize (char string[])
 int
 main(int argc, char *argv[])
 {
-  // char str[1000];
-  // str[1000] = '\0'
+  char str[1000];
+  str[1000] = '\0'
 
-  /*
   if (argc == 0)
     {
       printf("Entering interactive mode... (type exit to exit)\n");
@@ -45,7 +44,6 @@ main(int argc, char *argv[])
 	}
     }
   else
-  */
     colorize(argv[1]);
 
   return 0;
