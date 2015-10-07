@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <regex.h>
 
 void
 colorize (char string[])
@@ -28,8 +29,9 @@ int
 main(int argc, char *argv[])
 {
   char str[1000];
-  str[1000] = '\0'
+  str[1000] = '\0';
 
+  if (argv[(argc - 1)] == "color")
   if (argc == 0)
     {
       printf("Entering interactive mode... (type exit to exit)\n");
@@ -44,7 +46,7 @@ main(int argc, char *argv[])
 	}
     }
   else
-    colorize(argv[1]);
+    colorize(argv[argc]);
 
   return 0;
 }
