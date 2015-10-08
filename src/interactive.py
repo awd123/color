@@ -1,3 +1,5 @@
+import sys
+
 def interactive:
     while True:
         in_string = raw_input("color> ")
