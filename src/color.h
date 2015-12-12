@@ -2,7 +2,7 @@
 #include <string.h>
 
 void
-colorize (char string[])
+colorize (char *string)
 {
   int i, n;
 
