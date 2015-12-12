@@ -6,12 +6,7 @@ main (int argc, char *argv[])
 {
   PyObject *pName, *pModule, *pFunc;
   int i;
-  
-  char str[1000];
-  
-  str[1000] = '\0';
 
-  if (argv[(argc - 1)] == "color")
   if (argc == 0)
     {
       printf ("Entering interactive mode...\n");
