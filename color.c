@@ -1,3 +1,4 @@
+#include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
 
@@ -12,6 +13,8 @@ int main(int argc, char *argv[])
     {
       printf(">");
       fgets(str, 1024, stdin);
+      if (str == "\\q")
+        exit(0);
       colorize(str);
     }
   }
