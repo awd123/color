@@ -10,6 +10,7 @@ int main(int argc, char *argv[])
     char str[1024];
     while (1)
     {
+      printf(">");
       fgets(str, 1024, stdin);
       colorize(str);
     }
