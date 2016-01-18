@@ -13,4 +13,6 @@ Hello World!
 $ /path/to/color
 >Hello World!
 Hello World!
+>\q
+$
 ```
