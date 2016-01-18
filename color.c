@@ -7,12 +7,9 @@ int main(int argc, char *argv[])
 
   if (argc == 0)
   {
-    char *str;
-    while (1)
-    {
-      fgets(str, 1024, stdin);
-      colorize(str);
-    }
+    char str[1024];
+    fgets(str, 1024, stdin);
+    colorize(str);
   }
   else
     colorize(argv[1]);
