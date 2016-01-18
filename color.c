@@ -5,11 +5,14 @@ int main(int argc, char *argv[])
 {
   void colorize(char *string);
 
-  if (argc == 0)
+  if (argc == 1)
   {
     char str[1024];
-    fgets(str, 1024, stdin);
-    colorize(str);
+    while (1)
+    {
+      fgets(str, 1024, stdin);
+      colorize(str);
+    }
   }
   else
     colorize(argv[1]);
