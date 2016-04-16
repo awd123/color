@@ -35,7 +35,7 @@ If you do not install the program, then you must call `color` by typing the path
 $ ~/Downloads/color-0.2/color "ayy lmao"
 ayy lmao
 ```
-You can also make an alias in your ~/.bashrc (or whichever shell you use):
+You can also make an alias in your ~/.bashrc (or .zshrc, etc...):
 ```bash
 alias color="~/Downloads/color-0.2/color"
 ```
