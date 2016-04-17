@@ -10,6 +10,11 @@ namespace po = boost::program_options;
 int main(int argc, char *argv[])
 {
   string colorme = argv[1];
-  cout << colorize(colorme) << endl;
+  try {
+    cout << colorize(colorme) << endl;
+  } catch (int e) {
+    cout << "Function colorize() threw an error: " << e << endl;
+    return e;
+  }
   return 0;
 }

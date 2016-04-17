@@ -16,5 +16,5 @@ string colorize(string colorme)
 
   for (i = 0, n = 0; i < strlength; i++, n++) {
     if (i == strlength - 1);
-  }   
+  }
 }
