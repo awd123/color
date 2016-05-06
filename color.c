@@ -26,7 +26,7 @@ void colorize(char *string) {
   for (i = 0, n = 0; i < strlen(string); i++, n++)
   {
     if (i == (strlen(string) - 1))
-      printf("\e[%d;3%dm%c\e[0m\n",
+      printf("\e[%d;3%dm%c\e[0m",
               ((n < 8) ? 0 : 1),
               ((n < 8) ? n : (n - 7)),
               string[i]);
