@@ -9,9 +9,8 @@ int main(int argc, char *argv[])
   if (argc == 1)
   {
     char str[1024];
-    while (1)
+    while (fgets(str, sizeof str, stdin))
     {
-      fgets(str, 1024, stdin);
       colorize(str);
     }
   }
